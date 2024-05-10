@@ -10,6 +10,6 @@ public class ApiApplication {
 		SpringApplication.run(ApiApplication.class, args);
 	}
 	public String olaMundo (){
-		return "Olá mundo!";
+		return "O mundo do git é difícil!";
 	}
 }
