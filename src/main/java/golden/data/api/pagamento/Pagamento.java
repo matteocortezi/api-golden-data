@@ -23,11 +23,11 @@ public class Pagamento {
     private String status_pagamento;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "id_empresa", name = "pagamento_empresa", nullable = false)
-    private List<CadastroEmpresa> empresa;
+    @JoinColumn(referencedColumnName = "id_empresa", name = "pagamentos_empresa", nullable = false)
+    private CadastroEmpresa cadastroEmpresa;
 
     @OneToOne
-    @JoinColumn(name = "historico_compra_empresa", referencedColumnName = "id_pagamento")
+    @JoinColumn(name = "historico_compra_empresa", referencedColumnName = "id_pagamento", nullable = false)
     private HistoricoCompra historico;
 
     public Pagamento(PagamentoDTO dados) {

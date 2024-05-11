@@ -10,7 +10,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "CADASTRO_EMPRESA")
+import java.util.List;
+
+@Entity(name = "CADASTRO-EMPRESA")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,12 +26,11 @@ public class CadastroEmpresa {
     private String senha_empresa;
 
     @ManyToOne
-    @JoinColumn(name = "id_login_empresa", referencedColumnName = "id_login", nullable = false)
+    @JoinColumn(name = "id_login_empresa", referencedColumnName = "id_login", nullable = true)
     private Login login;
 
-    @OneToMany
-    @JoinColumn(referencedColumnName = "id_pagamento", nullable = false)
-    private Pagamento pagamento;
+    @OneToMany(mappedBy = "cadastroEmpresa")
+    private List<Pagamento> pagamentos;
 
     public CadastroEmpresa(CadastroEmpresaDto dados) {
        this.cnpj_empresa = dados.cnpj_empresa();

@@ -1,9 +1,6 @@
 package golden.data.api.historicoCompra;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,6 +16,11 @@ public class HistoricoCompra {
     private Long id_compra;
     private String dt_compra;
     private String valor_compra;
+
+    @Column(name= "id_pagamento")
+    private Long id_pagamento;
+
+
 
     public HistoricoCompra(HistoricoCompraDTO dados) {
         this.dt_compra = dados.dt_compra();
