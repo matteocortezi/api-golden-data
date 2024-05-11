@@ -2,6 +2,7 @@ package golden.data.api.controller;
 
 import golden.data.api.cadastroConsumidor.CadastroConsumidor;
 import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
+import golden.data.api.cadastroConsumidor.CadastroConsumidorRepository;
 import golden.data.api.cadastroEmpresa.CadastroEmpresa;
 import golden.data.api.cadastroEmpresa.CadastroEmpresaDto;
 import golden.data.api.cadastroEmpresa.CadastroEmpresaRepository;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CadastroConsumidorController {
 
     @Autowired
-    private CadastroEmpresaRepository repository;
+    private CadastroConsumidorRepository repository;
 
     @PostMapping
     public void cadastrar(@RequestBody CadastroConsumidorDTO dados){
