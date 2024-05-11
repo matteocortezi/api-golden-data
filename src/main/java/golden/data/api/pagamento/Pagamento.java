@@ -20,4 +20,10 @@ public class Pagamento {
     private Float valor;
     private String metodo_pagamento;
     private String status_pagamento;
+
+    public Pagamento(PagamentoDTO dados) {
+        this.valor = dados.valor();
+        this.metodo_pagamento = dados.metodo_pagamento();
+        this.status_pagamento = dados.status_pagamento();
+    }
 }

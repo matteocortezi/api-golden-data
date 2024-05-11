@@ -19,4 +19,9 @@ public class Login {
     private Long id_login;
     String email_usuario;
     String senha_usuario;
+
+    public Login(LoginDTO dados) {
+        this.email_usuario = dados.email_usuario();
+        this.senha_usuario = dados.senha_usuario();
+    }
 }

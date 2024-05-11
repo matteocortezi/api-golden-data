@@ -19,4 +19,9 @@ public class HistoricoCompra {
     private Long id_compra;
     private String dt_compra;
     private String valor_compra;
+
+    public HistoricoCompra(HistoricoCompraDTO dados) {
+        this.dt_compra = dados.dt_compra();
+        this.valor_compra = dados.valor_compra();
+    }
 }

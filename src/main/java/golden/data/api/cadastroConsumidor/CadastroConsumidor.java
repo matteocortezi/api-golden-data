@@ -24,4 +24,5 @@ public class CadastroConsumidor {
     private String genero_consumidor;
     private String dt_nasc_cons;
     private String estado_consumidor;
+
 }

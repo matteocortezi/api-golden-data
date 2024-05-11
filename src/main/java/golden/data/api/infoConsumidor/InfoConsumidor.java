@@ -23,4 +23,13 @@ public class InfoConsumidor {
     private String hobbies;
     private String anuncios_evitados;
     private String compra_online;
+
+    public InfoConsumidor(InfoConsumidorDTO dados) {
+        this.pref_compra_clie = dados.pref_compra_clie();
+        this.pref_anuncio = dados.pref_anuncio();
+        this.marcas_evitadas = dados.marcas_evitadas();
+        this.hobbies = dados.hobbies();
+        this.anuncios_evitados = dados.anuncios_evitados();
+        this.compra_online = dados.compra_online();
+    }
 }
