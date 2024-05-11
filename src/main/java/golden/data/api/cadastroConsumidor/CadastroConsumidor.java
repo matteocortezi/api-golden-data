@@ -1,9 +1,7 @@
 package golden.data.api.cadastroConsumidor;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import golden.data.api.login.Login;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,6 +22,10 @@ public class CadastroConsumidor {
     private String genero_consumidor;
     private String dt_nasc_cons;
     private String estado_consumidor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_login_consumidor", referencedColumnName = "id_login", nullable = false)
+    private Login login;
 
     public CadastroConsumidor(CadastroConsumidorDTO dados) {
         this.email_consumidor = dados.email_consumidor();

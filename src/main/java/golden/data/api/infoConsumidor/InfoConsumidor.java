@@ -1,9 +1,7 @@
 package golden.data.api.infoConsumidor;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import golden.data.api.cadastroConsumidor.CadastroConsumidor;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,6 +21,10 @@ public class InfoConsumidor {
     private String hobbies;
     private String anuncios_evitados;
     private String compra_online;
+
+    @OneToOne
+    @JoinColumn(name="info_consumidor", referencedColumnName = "id_consumidor")
+    private CadastroConsumidor consumidor;
 
     public InfoConsumidor(InfoConsumidorDTO dados) {
         this.pref_compra_clie = dados.pref_compra_clie();
