@@ -25,4 +25,13 @@ public class CadastroConsumidor {
     private String dt_nasc_cons;
     private String estado_consumidor;
 
+    public CadastroConsumidor(CadastroConsumidorDTO dados) {
+        this.email_consumidor = dados.email_consumidor();
+        this.senha_consumidor = dados.senha_consumidor();
+        this.cpf_consumidor = dados.cpf_consumidor();
+        this.nm_consumidor = dados.nm_consumidor();
+        this.genero_consumidor = dados.genero_consumidor();
+        this.dt_nasc_cons = dados.dt_nasc_cons();
+        this.estado_consumidor = dados.estado_consumidor();
+    }
 }

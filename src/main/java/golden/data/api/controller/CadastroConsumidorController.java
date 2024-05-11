@@ -3,6 +3,7 @@ package golden.data.api.controller;
 import golden.data.api.cadastroConsumidor.CadastroConsumidor;
 import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
 import golden.data.api.cadastroEmpresa.CadastroEmpresa;
+import golden.data.api.cadastroEmpresa.CadastroEmpresaDto;
 import golden.data.api.cadastroEmpresa.CadastroEmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,6 @@ public class CadastroConsumidorController {
 
     @PostMapping
     public void cadastrar(@RequestBody CadastroConsumidorDTO dados){
-        repository.save(new CadastroEmpresa(dados));
+        repository.save(new CadastroConsumidor(dados));
     }
 }
