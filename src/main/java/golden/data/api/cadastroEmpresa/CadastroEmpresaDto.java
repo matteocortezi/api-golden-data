@@ -1,4 +1,16 @@
 package golden.data.api.cadastroEmpresa;
 
-public record CadastroEmpresaDto(String cnpj_empresa, String email_empresa, String razao_social, String senha_empresa) {
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+public record CadastroEmpresaDto(
+        @NotBlank
+        String cnpj_empresa,
+        @NotBlank
+        @Email
+        String email_empresa,
+        @NotBlank
+        String razao_social,
+        @NotBlank
+        String senha_empresa) {
 }

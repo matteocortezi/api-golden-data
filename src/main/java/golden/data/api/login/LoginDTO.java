@@ -1,4 +1,10 @@
 package golden.data.api.login;
 
-public record LoginDTO(String email_usuario, String senha_usuario) {
+import jakarta.validation.constraints.NotBlank;
+
+public record LoginDTO(
+        @NotBlank
+        String email_usuario,
+        @NotBlank
+        String senha_usuario) {
 }

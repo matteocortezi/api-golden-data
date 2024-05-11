@@ -1,4 +1,10 @@
 package golden.data.api.historicoCompra;
 
-public record HistoricoCompraDTO(String dt_compra, String valor_compra) {
+import jakarta.validation.constraints.NotBlank;
+
+public record HistoricoCompraDTO(
+        @NotBlank
+        String dt_compra,
+        @NotBlank
+        String valor_compra) {
 }
