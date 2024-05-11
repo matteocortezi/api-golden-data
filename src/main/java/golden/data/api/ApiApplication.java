@@ -9,7 +9,4 @@ public class ApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
 	}
-	public String olaMundo (){
-		return "O mundo do git é bem difícil!";
-	}
 }
