@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotBlank;
 
 public record PagamentoDTO(
         @NotBlank
-        Float valor,
+        Float vlr_pag,
         @NotBlank
-        String metodo_pagamento,
+        String mtd_pag,
         @NotBlank
-        String status_pagamento) {
+        String sts_pag) {
 }

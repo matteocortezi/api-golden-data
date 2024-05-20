@@ -15,23 +15,23 @@ import lombok.NoArgsConstructor;
 public class InfoConsumidor {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_info;
-    private String pref_compra_clie;
-    private String pref_anuncio;
+    private String pref_cpm_clie;
+    private String pref_anc;
     private String marcas_evitadas;
     private String hobbies;
-    private String anuncios_evitados;
-    private String compra_online;
+    private String anc_evitados;
+    private String cmp_on;
 
-    @OneToOne
-    @JoinColumn(name="info_consumidor", referencedColumnName = "id_consumidor")
+    @ManyToOne
+    @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons", nullable = false)
     private CadastroConsumidor consumidor;
 
     public InfoConsumidor(InfoConsumidorDTO dados) {
-        this.pref_compra_clie = dados.pref_compra_clie();
-        this.pref_anuncio = dados.pref_anuncio();
+        this.pref_cpm_clie = dados.pref_cpm_clie();
+        this.pref_anc = dados.pref_anc();
         this.marcas_evitadas = dados.marcas_evitadas();
         this.hobbies = dados.hobbies();
-        this.anuncios_evitados = dados.anuncios_evitados();
-        this.compra_online = dados.compra_online();
+        this.anc_evitados = dados.anc_evitados();
+        this.cmp_on = dados.cmp_on();
     }
 }

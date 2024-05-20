@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 
 public record HistoricoCompraDTO(
         @NotBlank
-        String dt_compra,
+        String dt_cmp,
         @NotBlank
-        String valor_compra) {
+        String vlr_cmp) {
 }

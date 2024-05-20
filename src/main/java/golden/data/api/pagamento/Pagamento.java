@@ -8,31 +8,29 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @Entity(name = "PAGAMENTO")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_pagamento")
+@EqualsAndHashCode(of = "id_pag")
 public class Pagamento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pagamento;
-    private Float valor;
-    private String metodo_pagamento;
-    private String status_pagamento;
+    private Long id_pag;
+    private Float vlr_pag;
+    private String mtd_pag;
+    private String sts_pag;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "id_empresa", name = "pagamentos_empresa", nullable = false)
-    private CadastroEmpresa cadastroEmpresa;
+    @JoinColumn(name = "CADASTRO_EMPRESA_id_emp", nullable = false)
+    private CadastroEmpresa empresa;
 
-    @OneToOne
-    @JoinColumn(name = "historico_compra_empresa", referencedColumnName = "id_pagamento", nullable = false)
-    private HistoricoCompra historico;
+    @OneToOne(mappedBy = "id_pag")
+    private HistoricoCompra historicoCompra;
 
     public Pagamento(PagamentoDTO dados) {
-        this.valor = dados.valor();
-        this.metodo_pagamento = dados.metodo_pagamento();
-        this.status_pagamento = dados.status_pagamento();
+        this.vlr_pag = dados.vlr_pag();
+        this.mtd_pag = dados.mtd_pag();
+        this.sts_pag = dados.sts_pag();
     }
 }

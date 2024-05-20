@@ -4,15 +4,15 @@ import jakarta.validation.constraints.NotBlank;
 
 public record InfoConsumidorDTO(
         @NotBlank
-        String pref_compra_clie,
+        String pref_cpm_clie,
         @NotBlank
-        String pref_anuncio,
+        String pref_anc,
         @NotBlank
         String marcas_evitadas,
         @NotBlank
         String hobbies,
         @NotBlank
-        String anuncios_evitados,
+        String anc_evitados,
         @NotBlank
-        String compra_online) {
+        String cmp_on) {
 }

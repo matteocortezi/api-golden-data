@@ -5,12 +5,12 @@ import jakarta.validation.constraints.NotBlank;
 
 public record CadastroEmpresaDto(
         @NotBlank
-        String cnpj_empresa,
+        String cnpj_emp,
         @NotBlank
         @Email
-        String email_empresa,
+        String eml_emp,
         @NotBlank
-        String razao_social,
+        String rz_social_emp,
         @NotBlank
-        String senha_empresa) {
+        String senha_emp) {
 }

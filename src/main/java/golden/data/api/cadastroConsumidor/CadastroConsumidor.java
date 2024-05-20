@@ -1,39 +1,44 @@
 package golden.data.api.cadastroConsumidor;
-
-import golden.data.api.login.Login;
+import golden.data.api.infoConsumidor.InfoConsumidor;
+import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity (name = "CADASTRO_CONSUMIDOR")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_consumidor")
+@EqualsAndHashCode(of = "id_cons")
 public class CadastroConsumidor {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_consumidor;
-    private String email_consumidor;
-    private String senha_consumidor;
-    private String cpf_consumidor;
-    private String nm_consumidor;
-    private String genero_consumidor;
+    private Long id_cons;
+    private String eml_cons;
+    private String senha_cons;
+    private String cpf_cons;
+    private String nm_cons;
+    private String gen_cons;
     private String dt_nasc_cons;
-    private String estado_consumidor;
+    private String est_cons;
 
-    @ManyToOne
-    @JoinColumn(name = "id_login_consumidor", referencedColumnName = "id_login", nullable = false)
-    private Login login;
+    @OneToMany(mappedBy = "id_cons")
+    private List<InfoConsumidorEmpresa> infoDoConsParaEmpresa;
+
+    @OneToMany(mappedBy = "id_cons")
+    private List<InfoConsumidor> infoDoConsumidor;
+
 
     public CadastroConsumidor(CadastroConsumidorDTO dados) {
-        this.email_consumidor = dados.email_consumidor();
-        this.senha_consumidor = dados.senha_consumidor();
-        this.cpf_consumidor = dados.cpf_consumidor();
-        this.nm_consumidor = dados.nm_consumidor();
-        this.genero_consumidor = dados.genero_consumidor();
+        this.eml_cons = dados.eml_cons();
+        this.senha_cons = dados.senha_cons();
+        this.cpf_cons = dados.cpf_cons();
+        this.nm_cons = dados.nm_cons();
+        this.gen_cons = dados.gen_cons();
         this.dt_nasc_cons = dados.dt_nasc_cons();
-        this.estado_consumidor = dados.estado_consumidor();
+        this.est_cons = dados.est_cons();
     }
 }

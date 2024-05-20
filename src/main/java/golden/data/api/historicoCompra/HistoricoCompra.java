@@ -1,5 +1,6 @@
 package golden.data.api.historicoCompra;
 
+import golden.data.api.pagamento.Pagamento;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -10,20 +11,19 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_compra")
+@EqualsAndHashCode(of = "id_cmp")
 public class HistoricoCompra {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_compra;
-    private String dt_compra;
-    private String valor_compra;
+    private Long id_cmp;
+    private String dt_cmp;
+    private String vlr_cmp;
 
-    @Column(name= "id_pagamento")
-    private Long id_pagamento;
-
+    @OneToOne
+    private Pagamento pagamento;
 
 
     public HistoricoCompra(HistoricoCompraDTO dados) {
-        this.dt_compra = dados.dt_compra();
-        this.valor_compra = dados.valor_compra();
+        this.dt_cmp = dados.dt_cmp();
+        this.vlr_cmp = dados.vlr_cmp();
     }
 }

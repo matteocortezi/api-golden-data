@@ -1,9 +1,7 @@
 package golden.data.api.cadastroEmpresa;
 
-import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
-import golden.data.api.login.Login;
+import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
 import golden.data.api.pagamento.Pagamento;
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -12,30 +10,31 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+
 @Entity(name = "CADASTRO-EMPRESA")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_empresa")
+@EqualsAndHashCode(of = "id_emp")
 public class CadastroEmpresa {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_empresa;
-    private String cnpj_empresa;
-    private String email_empresa;
-    private String razao_social;
-    private String senha_empresa;
+    private Long id_emp;
+    private String cnpj_emp;
+    private String eml_emp;
+    private String rz_social_emp;
+    private String senha_emp;
 
-    @ManyToOne
-    @JoinColumn(name = "id_login_empresa", referencedColumnName = "id_login", nullable = true)
-    private Login login;
+    @OneToMany(mappedBy = "id_emp")
+    private List <Pagamento> pagamentos;
 
-    @OneToMany(mappedBy = "cadastroEmpresa")
-    private List<Pagamento> pagamentos;
+    @OneToMany(mappedBy = "id_emp")
+    private List <InfoConsumidorEmpresa> infoConsumidorParaEmpresa;
+
 
     public CadastroEmpresa(CadastroEmpresaDto dados) {
-       this.cnpj_empresa = dados.cnpj_empresa();
-       this.email_empresa = dados.email_empresa();
-       this.razao_social = dados.razao_social();
-       this.senha_empresa = dados.senha_empresa();
+       this.cnpj_emp = dados.cnpj_emp();
+       this.eml_emp = dados.eml_emp();
+       this.rz_social_emp = dados.rz_social_emp();
+       this.senha_emp = dados.senha_emp();
     }
 }
