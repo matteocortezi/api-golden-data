@@ -25,7 +25,7 @@ public class Pagamento {
     @JoinColumn(name = "CADASTRO_EMPRESA_id_emp", nullable = false)
     private CadastroEmpresa empresa;
 
-    @OneToOne(mappedBy = "id_pag")
+    @OneToOne(mappedBy = "pagamento")
     private HistoricoCompra historicoCompra;
 
     public Pagamento(PagamentoDTO dados) {

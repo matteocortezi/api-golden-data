@@ -24,10 +24,10 @@ public class CadastroEmpresa {
     private String rz_social_emp;
     private String senha_emp;
 
-    @OneToMany(mappedBy = "id_emp")
+    @OneToMany(mappedBy = "empresa")
     private List <Pagamento> pagamentos;
 
-    @OneToMany(mappedBy = "id_emp")
+    @OneToMany(mappedBy = "empresa")
     private List <InfoConsumidorEmpresa> infoConsumidorParaEmpresa;
 
 

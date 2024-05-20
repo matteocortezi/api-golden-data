@@ -25,10 +25,10 @@ public class CadastroConsumidor {
     private String dt_nasc_cons;
     private String est_cons;
 
-    @OneToMany(mappedBy = "id_cons")
+    @OneToMany(mappedBy = "consumidor")
     private List<InfoConsumidorEmpresa> infoDoConsParaEmpresa;
 
-    @OneToMany(mappedBy = "id_cons")
+    @OneToMany(mappedBy = "consumidor")
     private List<InfoConsumidor> infoDoConsumidor;
 
 
