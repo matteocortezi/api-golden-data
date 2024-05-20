@@ -1,9 +1,14 @@
 package golden.data.api.cadastroEmpresa;
 
+
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public record CadastroEmpresaDto(
+
+        @NotBlank
+        Long id_emp,
         @NotBlank
         String cnpj_emp,
         @NotBlank

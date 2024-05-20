@@ -1,23 +1,20 @@
 package golden.data.api.cadastroEmpresa;
-
 import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
 import golden.data.api.pagamento.Pagamento;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 import java.util.List;
 
 
-@Entity(name = "CADASTRO-EMPRESA")
+@Entity(name = "CADASTRO_EMPRESA")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_emp")
+
 public class CadastroEmpresa {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Devido a um problema com o BANCO não está sendo possível usar o ID autoincrementável.
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id_emp;
     private String cnpj_emp;
     private String eml_emp;
@@ -32,9 +29,10 @@ public class CadastroEmpresa {
 
 
     public CadastroEmpresa(CadastroEmpresaDto dados) {
-       this.cnpj_emp = dados.cnpj_emp();
-       this.eml_emp = dados.eml_emp();
-       this.rz_social_emp = dados.rz_social_emp();
-       this.senha_emp = dados.senha_emp();
+        this.id_emp = dados.id_emp();
+        this.cnpj_emp = dados.cnpj_emp();
+        this.eml_emp = dados.eml_emp();
+        this.rz_social_emp = dados.rz_social_emp();
+        this.senha_emp = dados.senha_emp();
     }
 }

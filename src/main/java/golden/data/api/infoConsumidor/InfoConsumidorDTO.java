@@ -16,3 +16,6 @@ public record InfoConsumidorDTO(
         @NotBlank
         String cmp_on) {
 }
+
+
+

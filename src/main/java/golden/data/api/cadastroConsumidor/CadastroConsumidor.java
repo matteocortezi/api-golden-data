@@ -3,7 +3,6 @@ import golden.data.api.infoConsumidor.InfoConsumidor;
 import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,12 +12,13 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_cons")
 public class CadastroConsumidor {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Devido a um problema com o BANCO não está sendo possível usar o ID autoincrementável.
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id_cons;
     private String eml_cons;
-    private String senha_cons;
+    private String pwd_cons;
     private String cpf_cons;
     private String nm_cons;
     private String gen_cons;
@@ -33,8 +33,9 @@ public class CadastroConsumidor {
 
 
     public CadastroConsumidor(CadastroConsumidorDTO dados) {
+        this.id_cons = dados.id_cons();
         this.eml_cons = dados.eml_cons();
-        this.senha_cons = dados.senha_cons();
+        this.pwd_cons = dados.pwd_cons();
         this.cpf_cons = dados.cpf_cons();
         this.nm_cons = dados.nm_cons();
         this.gen_cons = dados.gen_cons();
