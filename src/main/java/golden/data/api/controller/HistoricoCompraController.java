@@ -35,4 +35,9 @@ public class HistoricoCompraController {
         var historicoCompra = repository.getReferenceById(dados.id_cmp());
         historicoCompra.atualizarInformacoes(dados);
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }

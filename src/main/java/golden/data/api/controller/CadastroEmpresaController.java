@@ -34,5 +34,10 @@ public class CadastroEmpresaController {
         var empresa = repository.getReferenceById(dados.id_emp());
         empresa.atualizarInformacoes(dados);
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 
 }

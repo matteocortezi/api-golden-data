@@ -34,4 +34,9 @@ public class PagamentoController {
         var pagamento = repository.getReferenceById(dados.id_pag());
         pagamento.atualizarInformacoes(dados);
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 }

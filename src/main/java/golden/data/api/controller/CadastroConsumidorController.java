@@ -35,5 +35,10 @@ public class CadastroConsumidorController {
         var consumidor = repository.getReferenceById(dados.id_cons());
         consumidor.atualizarInformacoes(dados);
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        repository.deleteById(id);
+    }
 
 }
