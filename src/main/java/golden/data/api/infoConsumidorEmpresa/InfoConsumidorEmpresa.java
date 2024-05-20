@@ -5,7 +5,6 @@ import golden.data.api.cadastroConsumidor.CadastroConsumidor;
 import golden.data.api.cadastroEmpresa.CadastroEmpresa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,9 +14,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_info_cons_emp")
+//@EqualsAndHashCode(of = "id_info_cons_emp")
 public class InfoConsumidorEmpresa {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id_info_cons_emp;
 
     @ManyToOne

@@ -4,7 +4,6 @@ import golden.data.api.cadastroEmpresa.CadastroEmpresa;
 import golden.data.api.historicoCompra.HistoricoCompra;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,9 +12,10 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id_pag")
+//@EqualsAndHashCode(of = "id_pag")
 public class Pagamento {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id_pag;
     private Float vlr_pag;
     private String mtd_pag;
@@ -33,4 +33,17 @@ public class Pagamento {
         this.mtd_pag = dados.mtd_pag();
         this.sts_pag = dados.sts_pag();
     }
+
+    public void atualizarInformacoes(PagamentoDTO dados) {
+        if (dados.vlr_pag() != null) {
+            this.vlr_pag = dados.vlr_pag();
+        }
+        if (dados.mtd_pag() != null) {
+            this.mtd_pag = dados.mtd_pag();
+        }
+        if (dados.sts_pag() != null) {
+            this.sts_pag = dados.sts_pag();
+        }
+    }
+
 }

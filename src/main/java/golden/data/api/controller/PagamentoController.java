@@ -6,6 +6,7 @@ import golden.data.api.pagamento.Pagamento;
 import golden.data.api.pagamento.PagamentoDTO;
 import golden.data.api.pagamento.PagamentoRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +26,12 @@ public class PagamentoController {
     @GetMapping
     public List<DadosListagemPagamentos> listar() {
         return repository.findAll().stream().map(DadosListagemPagamentos::new).toList();
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid PagamentoDTO dados){
+        var pagamento = repository.getReferenceById(dados.id_pag());
+        pagamento.atualizarInformacoes(dados);
     }
 }

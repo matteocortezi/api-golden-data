@@ -5,6 +5,7 @@ import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
 import golden.data.api.cadastroConsumidor.CadastroConsumidorRepository;
 import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,13 @@ public class CadastroConsumidorController {
     @GetMapping
     public List<DadosListagemConsumidores> listar() {
         return repository.findAll().stream().map(DadosListagemConsumidores::new).toList();
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid CadastroConsumidorDTO dados){
+        var consumidor = repository.getReferenceById(dados.id_cons());
+        consumidor.atualizarInformacoes(dados);
     }
 
 }

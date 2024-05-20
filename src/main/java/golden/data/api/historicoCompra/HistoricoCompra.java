@@ -13,7 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id_cmp")
 public class HistoricoCompra {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id_cmp;
     private String dt_cmp;
     private String vlr_cmp;
@@ -25,5 +26,14 @@ public class HistoricoCompra {
     public HistoricoCompra(HistoricoCompraDTO dados) {
         this.dt_cmp = dados.dt_cmp();
         this.vlr_cmp = dados.vlr_cmp();
+    }
+
+    public void atualizarInformacoes(HistoricoCompraDTO dados) {
+        if (dados.dt_cmp() != null) {
+            this.dt_cmp = dados.dt_cmp();
+        }
+        if (dados.vlr_cmp() != null) {
+            this.vlr_cmp = dados.vlr_cmp();
+        }
     }
 }

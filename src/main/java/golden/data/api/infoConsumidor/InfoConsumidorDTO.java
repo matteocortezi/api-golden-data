@@ -1,8 +1,11 @@
 package golden.data.api.infoConsumidor;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record InfoConsumidorDTO(
+        @NotNull
+        Long id_info,
         @NotBlank
         String pref_cpm_clie,
         @NotBlank

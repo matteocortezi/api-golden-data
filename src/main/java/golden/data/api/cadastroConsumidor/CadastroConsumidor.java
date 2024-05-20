@@ -42,4 +42,32 @@ public class CadastroConsumidor {
         this.dt_nasc_cons = dados.dt_nasc_cons();
         this.est_cons = dados.est_cons();
     }
+
+    public void atualizarInformacoes(CadastroConsumidorDTO dados) {
+        if (dados.id_cons() != null) {
+            this.id_cons = dados.id_cons();
+        }
+        if (dados.eml_cons() != null) {
+            this.eml_cons = dados.eml_cons();
+        }
+        if (dados.pwd_cons() != null) {
+            this.pwd_cons = dados.pwd_cons();
+        }
+        if (dados.cpf_cons() != null) {
+            this.cpf_cons = dados.cpf_cons();
+        }
+        if (dados.nm_cons() != null) {
+            this.nm_cons = dados.nm_cons();
+        }
+        if (dados.gen_cons() != null) {
+            this.gen_cons = dados.gen_cons();
+        }
+        if (dados.dt_nasc_cons() != null) {
+            this.dt_nasc_cons = dados.dt_nasc_cons();
+        }
+        if (dados.est_cons() != null) {
+            this.est_cons = dados.est_cons();
+        }
+    }
+
 }

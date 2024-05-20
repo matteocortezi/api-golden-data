@@ -6,6 +6,7 @@ import golden.data.api.historicoCompra.HistoricoCompra;
 import golden.data.api.historicoCompra.HistoricoCompraDTO;
 import golden.data.api.historicoCompra.HistoricoCompraRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,5 +27,12 @@ public class HistoricoCompraController {
     @GetMapping
     public List<DadosListagemHistoricoCompra> listar() {
         return repository.findAll().stream().map(DadosListagemHistoricoCompra::new).toList();
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid HistoricoCompraDTO dados){
+        var historicoCompra = repository.getReferenceById(dados.id_cmp());
+        historicoCompra.atualizarInformacoes(dados);
     }
 }

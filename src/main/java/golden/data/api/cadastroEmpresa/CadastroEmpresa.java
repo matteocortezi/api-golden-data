@@ -35,4 +35,23 @@ public class CadastroEmpresa {
         this.rz_social_emp = dados.rz_social_emp();
         this.senha_emp = dados.senha_emp();
     }
+
+    public void atualizarInformacoes(CadastroEmpresaDto dados) {
+        if (dados.id_emp() != null) {
+            this.id_emp = dados.id_emp();
+        }
+        if (dados.cnpj_emp() != null) {
+            this.cnpj_emp = dados.cnpj_emp();
+        }
+        if (dados.eml_emp() != null) {
+            this.eml_emp = dados.eml_emp();
+        }
+        if (dados.rz_social_emp() != null) {
+            this.rz_social_emp = dados.rz_social_emp();
+        }
+        if (dados.senha_emp() != null) {
+            this.senha_emp = dados.senha_emp();
+        }
+    }
+
 }
