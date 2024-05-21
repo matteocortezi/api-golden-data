@@ -1,7 +1,7 @@
 # Golden-Data-API
 
 ## Pitch
-Assista ao nosso pitch 
+Assista ao nosso pitch https://youtu.be/Gd7xjo8WuCk
 
 ## Integrantes do Grupo
 - **Vitor da Silva Ruas** (550871): Responsável pelo planejamento do projeto, garantindo a coesão entre o desenvolvimento do sistema, modelos de IA, APIs, banco de dados, front-end, entre outros.
