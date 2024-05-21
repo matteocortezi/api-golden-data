@@ -28,12 +28,6 @@ public class PagamentoController {
         return repository.findAll().stream().map(DadosListagemPagamentos::new).toList();
     }
 
-    @PutMapping
-    @Transactional
-    public void atualizar(@RequestBody @Valid PagamentoDTO dados){
-        var pagamento = repository.getReferenceById(dados.id_pag());
-        pagamento.atualizarInformacoes(dados);
-    }
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){

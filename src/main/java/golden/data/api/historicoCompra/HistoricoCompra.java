@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id_cmp")
 public class HistoricoCompra {
-    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_cmp;
     private String dt_cmp;
     private String vlr_cmp;

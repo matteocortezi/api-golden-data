@@ -14,18 +14,16 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-//@EqualsAndHashCode(of = "id_info_cons_emp")
 public class InfoConsumidorEmpresa {
-    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_info_cons_emp;
 
     @ManyToOne
-    @JoinColumn(name = "CADASTRO_EMPRESA_id_emp", nullable = false)
+    @JoinColumn(name = "CADASTRO_EMPRESA_id_emp")
     private CadastroEmpresa empresa;
 
     @ManyToOne
-    @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons", nullable = false)
+    @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons")
     private CadastroConsumidor consumidor;
 
 

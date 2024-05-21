@@ -12,10 +12,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-//@EqualsAndHashCode(of = "id_pag")
 public class Pagamento {
-    //@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pag;
     private Float vlr_pag;
     private String mtd_pag;
