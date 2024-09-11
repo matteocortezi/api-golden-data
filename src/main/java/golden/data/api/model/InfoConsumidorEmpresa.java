@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InfoConsumidorEmpresa {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = )
     private Long id_info_cons_emp;
 
     @ManyToOne

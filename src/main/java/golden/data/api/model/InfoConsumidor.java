@@ -12,46 +12,61 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InfoConsumidor {
     @Id
-    private Long id_info;
-    private String pref_cpm_clie;
-    private String pref_anc;
-    private String marcas_evitadas;
+    @Column(name = "id_info")
+    private Long idInfo;
+
+    @Column(name = "pref_cpm_clie")
+    private String prefCmpClie;
+
+    @Column(name = "pref_anc")
+    private String prefAnc;
+
+    @Column(name = "marcas_evitadas")
+    private String marcasEvitadas;
+
+    @Column(name = "hobbies")
     private String hobbies;
-    private String anc_evitados;
-    private String cmp_on;
+
+    @Column(name = "anc_evitados")
+    private String ancEvitados;
+
+    @Column(name = "cmp_on")
+    private String cmpOn;
 
     @ManyToOne
     @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons", nullable = false)
     private CadastroConsumidor consumidor;
 
     public InfoConsumidor(InfoConsumidorDTO dados) {
-        this.pref_cpm_clie = dados.pref_cpm_clie();
-        this.pref_anc = dados.pref_anc();
-        this.marcas_evitadas = dados.marcas_evitadas();
+        this.prefCmpClie = dados.prefCmpClie();
+        this.prefAnc = dados.prefAnc();
+        this.marcasEvitadas = dados.marcasEvitadas();
         this.hobbies = dados.hobbies();
-        this.anc_evitados = dados.anc_evitados();
-        this.cmp_on = dados.cmp_on();
+        this.ancEvitados = dados.ancEvitados();
+        this.cmpOn = dados.cmpOn();
     }
 
+
     public void atualizarInformacoes(InfoConsumidorDTO dados) {
-        if (dados.pref_cpm_clie() != null) {
-            this.pref_cpm_clie = dados.pref_cpm_clie();
+        if (dados.prefCmpClie() != null) {
+            this.prefCmpClie = dados.prefCmpClie();
         }
-        if (dados.pref_anc() != null) {
-            this.pref_anc = dados.pref_anc();
+        if (dados.prefAnc() != null) {
+            this.prefAnc = dados.prefAnc();
         }
-        if (dados.marcas_evitadas() != null) {
-            this.marcas_evitadas = dados.marcas_evitadas();
+        if (dados.marcasEvitadas() != null) {
+            this.marcasEvitadas = dados.marcasEvitadas();
         }
         if (dados.hobbies() != null) {
             this.hobbies = dados.hobbies();
         }
-        if (dados.anc_evitados() != null) {
-            this.anc_evitados = dados.anc_evitados();
+        if (dados.ancEvitados() != null) {
+            this.ancEvitados = dados.ancEvitados();
         }
-        if (dados.cmp_on() != null) {
-            this.cmp_on = dados.cmp_on();
+        if (dados.cmpOn() != null) {
+            this.cmpOn = dados.cmpOn();
         }
     }
+
 
 }

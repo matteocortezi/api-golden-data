@@ -5,20 +5,22 @@ import jakarta.validation.constraints.NotNull;
 
 public record InfoConsumidorDTO(
         @NotNull
-        Long id_info,
+        Long idInfo,
         @NotBlank
-        String pref_cpm_clie,
+        String prefCmpClie,
         @NotBlank
-        String pref_anc,
+        String prefAnc,
         @NotBlank
-        String marcas_evitadas,
+        String marcasEvitadas,
         @NotBlank
         String hobbies,
         @NotBlank
-        String anc_evitados,
+        String ancEvitados,
         @NotBlank
-        String cmp_on) {
+        String cmpOn) {
 }
+
+
 
 
 
