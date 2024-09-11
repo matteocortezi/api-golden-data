@@ -7,6 +7,8 @@ import golden.data.api.dto.consumidoresDTO.ListagemConsumidoresDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +27,8 @@ public class CadastroConsumidorController {
     }
 
     @GetMapping
-    public List<ListagemConsumidoresDTO> listar() {
-        return repository.findAll().stream().map(ListagemConsumidoresDTO::new).toList();
+    public Page<ListagemConsumidoresDTO> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(ListagemConsumidoresDTO::new);
     }
 
     @PutMapping

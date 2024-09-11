@@ -3,11 +3,14 @@ package golden.data.api.controller;
 import golden.data.api.model.CadastroEmpresa;
 import golden.data.api.dto.empresaDTO.CadastroEmpresaDto;
 import golden.data.api.repository.CadastroEmpresaRepository;
-import golden.data.api.dto.empresaDTO.DadosListagemEmpresas;
+import golden.data.api.dto.empresaDTO.ListagemEmpresasDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -22,9 +25,13 @@ public class CadastroEmpresaController {
     public void cadastrar(@RequestBody CadastroEmpresaDto dados){
         repository.save(new CadastroEmpresa(dados));
     }
+
+
+
+
     @GetMapping
-    public List<DadosListagemEmpresas> listar() {
-        return repository.findAll().stream().map(DadosListagemEmpresas::new).toList();
+    public Page<ListagemEmpresasDTO> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(ListagemEmpresasDTO::new);
     }
 
     @PutMapping

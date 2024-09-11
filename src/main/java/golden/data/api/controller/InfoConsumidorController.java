@@ -7,6 +7,8 @@ import golden.data.api.repository.InfoConsumidorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,9 +26,12 @@ public class InfoConsumidorController {
     public void cadastrar(@RequestBody InfoConsumidorDTO dados){
         repository.save(new InfoConsumidor(dados));
     }
+
+
+
     @GetMapping
-    public List<ListagemInfoConsumidorDTO> listar() {
-        return repository.findAll().stream().map(ListagemInfoConsumidorDTO::new).toList();
+    public Page<ListagemInfoConsumidorDTO> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(ListagemInfoConsumidorDTO::new);
     }
 
     @PutMapping

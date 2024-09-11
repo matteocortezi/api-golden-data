@@ -6,6 +6,8 @@ import golden.data.api.pagamento.PagamentoDTO;
 import golden.data.api.repository.PagamentoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +24,8 @@ public class PagamentoController {
         repository.save(new Pagamento(dados));
     }
     @GetMapping
-    public List<DadosListagemPagamentos> listar() {
-        return repository.findAll().stream().map(DadosListagemPagamentos::new).toList();
+    public Page<DadosListagemPagamentos> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(DadosListagemPagamentos::new);
     }
 
     @DeleteMapping("/{id}")

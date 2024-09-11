@@ -7,6 +7,8 @@ import golden.data.api.repository.HistoricoCompraRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,9 +25,11 @@ public class HistoricoCompraController {
     public void cadastrar(@RequestBody HistoricoCompraDTO dados){
         repository.save(new HistoricoCompra(dados));
     }
+
+
     @GetMapping
-    public List<ListagemHistoricoCompraDTO> listar() {
-        return repository.findAll().stream().map(ListagemHistoricoCompraDTO::new).toList();
+    public Page<ListagemHistoricoCompraDTO> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(ListagemHistoricoCompraDTO::new);
     }
 
     @PutMapping
