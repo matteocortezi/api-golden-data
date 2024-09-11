@@ -11,14 +11,21 @@ import java.util.List;
 @AllArgsConstructor
 
 public class CadastroEmpresa {
-    //Devido a um problema com o BANCO não está sendo possível usar o ID autoincrementável.
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long id_emp;
-    private String cnpj_emp;
-    private String eml_emp;
-    private String rz_social_emp;
-    private String senha_emp;
+    @Column(name = "id_emp")
+    private Long idEmp;
+
+    @Column(name = "cnpj_emp")
+    private String cnpjEmp;
+
+    @Column(name = "eml_emp")
+    private String emlEmp;
+
+    @Column(name = "rz_social_emp")
+    private String rzSocialEmp;
+
+    @Column(name = "senha_emp")
+    private String senhaEmp;
 
     @OneToMany(mappedBy = "empresa")
     private List <Pagamento> pagamentos;
@@ -28,29 +35,31 @@ public class CadastroEmpresa {
 
 
     public CadastroEmpresa(CadastroEmpresaDto dados) {
-        this.id_emp = dados.id_emp();
-        this.cnpj_emp = dados.cnpj_emp();
-        this.eml_emp = dados.eml_emp();
-        this.rz_social_emp = dados.rz_social_emp();
-        this.senha_emp = dados.senha_emp();
+        this.idEmp = dados.idEmp();
+        this.cnpjEmp = dados.cnpjEmp();
+        this.emlEmp = dados.emlEmp();
+        this.rzSocialEmp = dados.rzSocialEmp();
+        this.senhaEmp = dados.senhaEmp();
     }
 
+
     public void atualizarInformacoes(CadastroEmpresaDto dados) {
-        if (dados.id_emp() != null) {
-            this.id_emp = dados.id_emp();
+        if (dados.idEmp() != null) {
+            this.idEmp = dados.idEmp();
         }
-        if (dados.cnpj_emp() != null) {
-            this.cnpj_emp = dados.cnpj_emp();
+        if (dados.cnpjEmp() != null) {
+            this.cnpjEmp = dados.cnpjEmp();
         }
-        if (dados.eml_emp() != null) {
-            this.eml_emp = dados.eml_emp();
+        if (dados.emlEmp() != null) {
+            this.emlEmp = dados.emlEmp();
         }
-        if (dados.rz_social_emp() != null) {
-            this.rz_social_emp = dados.rz_social_emp();
+        if (dados.rzSocialEmp() != null) {
+            this.rzSocialEmp = dados.rzSocialEmp();
         }
-        if (dados.senha_emp() != null) {
-            this.senha_emp = dados.senha_emp();
+        if (dados.senhaEmp() != null) {
+            this.senhaEmp = dados.senhaEmp();
         }
     }
+
 
 }

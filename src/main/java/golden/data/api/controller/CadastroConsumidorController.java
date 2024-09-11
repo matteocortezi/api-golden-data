@@ -34,7 +34,7 @@ public class CadastroConsumidorController {
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid CadastroConsumidorDTO dados){
-        var consumidor = repository.getReferenceById(dados.id_cons());
+        var consumidor = repository.getReferenceById(dados.idCons());
         consumidor.atualizarInformacoes(dados);
     }
     @DeleteMapping("/{id}")

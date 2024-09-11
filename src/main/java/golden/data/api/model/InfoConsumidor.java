@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-//@EqualsAndHashCode(of = "id_info")
 public class InfoConsumidor {
-//    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id_info;
     private String pref_cpm_clie;

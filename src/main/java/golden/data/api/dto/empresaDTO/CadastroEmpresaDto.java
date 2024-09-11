@@ -9,14 +9,20 @@ import jakarta.validation.constraints.NotNull;
 public record CadastroEmpresaDto(
 
         @NotNull
-        Long id_emp,
+        Long idEmp,
+
         @NotBlank
-        String cnpj_emp,
+        String cnpjEmp,
+
         @NotBlank
         @Email
-        String eml_emp,
+        String emlEmp,
+
         @NotBlank
-        String rz_social_emp,
+        String rzSocialEmp,
+
         @NotBlank
-        String senha_emp) {
+        String senhaEmp
+
+) {
 }
