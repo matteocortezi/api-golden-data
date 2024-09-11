@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class InfoConsumidorEmpresa {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = )
-    private Long id_info_cons_emp;
+    @Column(name = "id_info_cons_emp")
+    private Long idInfoConsEmp;
 
     @ManyToOne
     @JoinColumn(name = "CADASTRO_EMPRESA_id_emp")

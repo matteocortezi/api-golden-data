@@ -13,10 +13,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Pagamento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pag;
-    private Float vlr_pag;
-    private String mtd_pag;
-    private String sts_pag;
+
+    @Column(name = "id_pag")
+    private Long idPag;
+
+    @Column(name = "vlr_pag")
+    private Float vlrPag;
+
+    @Column(name = "mtd_pag")
+    private String mtdPag;
+
+    @Column(name = "sts_pag")
+    private String stsPag;
 
     @ManyToOne
     @JoinColumn(name = "CADASTRO_EMPRESA_id_emp", nullable = false)
@@ -26,21 +34,23 @@ public class Pagamento {
     private HistoricoCompra historicoCompra;
 
     public Pagamento(PagamentoDTO dados) {
-        this.vlr_pag = dados.vlr_pag();
-        this.mtd_pag = dados.mtd_pag();
-        this.sts_pag = dados.sts_pag();
+        this.vlrPag = dados.vlrPag();
+        this.mtdPag = dados.mtdPag();
+        this.stsPag = dados.stsPag();
     }
 
+
     public void atualizarInformacoes(PagamentoDTO dados) {
-        if (dados.vlr_pag() != null) {
-            this.vlr_pag = dados.vlr_pag();
+        if (dados.vlrPag() != null) {
+            this.vlrPag = dados.vlrPag();
         }
-        if (dados.mtd_pag() != null) {
-            this.mtd_pag = dados.mtd_pag();
+        if (dados.mtdPag() != null) {
+            this.mtdPag = dados.mtdPag();
         }
-        if (dados.sts_pag() != null) {
-            this.sts_pag = dados.sts_pag();
+        if (dados.stsPag() != null) {
+            this.stsPag = dados.stsPag();
         }
     }
+
 
 }

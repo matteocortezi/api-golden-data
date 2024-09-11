@@ -5,9 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 
 public record PagamentoDTO(
         @NotBlank
-        Float vlr_pag,
+        Float vlrPag,
         @NotBlank
-        String mtd_pag,
+        String mtdPag,
         @NotBlank
-        String sts_pag) {
+        String stsPag) {
 }
+
