@@ -1,4 +1,4 @@
-package golden.data.api.infoConsumidor;
+package golden.data.api.dto.infoConsumidorDTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

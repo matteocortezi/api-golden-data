@@ -1,4 +1,4 @@
-package golden.data.api.cadastroEmpresa;
+package golden.data.api.repository;
 
 import golden.data.api.model.CadastroEmpresa;
 import org.springframework.data.jpa.repository.JpaRepository;

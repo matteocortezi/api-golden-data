@@ -1,9 +1,9 @@
 package golden.data.api.controller;
 
 import golden.data.api.model.CadastroConsumidor;
-import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
-import golden.data.api.cadastroConsumidor.CadastroConsumidorRepository;
-import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
+import golden.data.api.dto.consumidoresDTO.CadastroConsumidorDTO;
+import golden.data.api.repository.CadastroConsumidorRepository;
+import golden.data.api.dto.consumidoresDTO.ListagemConsumidoresDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class CadastroConsumidorController {
     }
 
     @GetMapping
-    public List<DadosListagemConsumidores> listar() {
-        return repository.findAll().stream().map(DadosListagemConsumidores::new).toList();
+    public List<ListagemConsumidoresDTO> listar() {
+        return repository.findAll().stream().map(ListagemConsumidoresDTO::new).toList();
     }
 
     @PutMapping

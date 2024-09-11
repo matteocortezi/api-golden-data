@@ -1,4 +1,4 @@
-package golden.data.api.cadastroEmpresa;
+package golden.data.api.dto.empresaDTO;
 
 
 import golden.data.api.model.CadastroEmpresa;

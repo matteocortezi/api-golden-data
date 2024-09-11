@@ -1,4 +1,4 @@
-package golden.data.api.historicoCompra;
+package golden.data.api.repository;
 
 import golden.data.api.model.HistoricoCompra;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,6 +1,6 @@
 package golden.data.api.model;
 
-import golden.data.api.infoConsumidor.InfoConsumidorDTO;
+import golden.data.api.dto.infoConsumidorDTO.InfoConsumidorDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

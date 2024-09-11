@@ -1,9 +1,9 @@
 package golden.data.api.controller;
 
 import golden.data.api.model.CadastroEmpresa;
-import golden.data.api.cadastroEmpresa.CadastroEmpresaDto;
-import golden.data.api.cadastroEmpresa.CadastroEmpresaRepository;
-import golden.data.api.cadastroEmpresa.DadosListagemEmpresas;
+import golden.data.api.dto.empresaDTO.CadastroEmpresaDto;
+import golden.data.api.repository.CadastroEmpresaRepository;
+import golden.data.api.dto.empresaDTO.DadosListagemEmpresas;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

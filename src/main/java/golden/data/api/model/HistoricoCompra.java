@@ -1,7 +1,6 @@
 package golden.data.api.model;
 
-import golden.data.api.historicoCompra.HistoricoCompraDTO;
-import golden.data.api.pagamento.Pagamento;
+import golden.data.api.dto.historicoCompraDTO.HistoricoCompraDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

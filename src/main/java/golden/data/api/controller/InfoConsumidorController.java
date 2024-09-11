@@ -1,9 +1,9 @@
 package golden.data.api.controller;
 
-import golden.data.api.infoConsumidor.DadosListagemInfoConsumidor;
+import golden.data.api.dto.infoConsumidorDTO.ListagemInfoConsumidorDTO;
 import golden.data.api.model.InfoConsumidor;
-import golden.data.api.infoConsumidor.InfoConsumidorDTO;
-import golden.data.api.infoConsumidor.InfoConsumidorRepository;
+import golden.data.api.dto.infoConsumidorDTO.InfoConsumidorDTO;
+import golden.data.api.repository.InfoConsumidorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class InfoConsumidorController {
         repository.save(new InfoConsumidor(dados));
     }
     @GetMapping
-    public List<DadosListagemInfoConsumidor> listar() {
-        return repository.findAll().stream().map(DadosListagemInfoConsumidor::new).toList();
+    public List<ListagemInfoConsumidorDTO> listar() {
+        return repository.findAll().stream().map(ListagemInfoConsumidorDTO::new).toList();
     }
 
     @PutMapping

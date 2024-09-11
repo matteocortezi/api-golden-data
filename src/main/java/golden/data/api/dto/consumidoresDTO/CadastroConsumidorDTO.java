@@ -1,4 +1,4 @@
-package golden.data.api.cadastroConsumidor;
+package golden.data.api.dto.consumidoresDTO;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

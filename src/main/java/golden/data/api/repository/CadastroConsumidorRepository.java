@@ -1,4 +1,4 @@
-package golden.data.api.cadastroConsumidor;
+package golden.data.api.repository;
 
 import golden.data.api.model.CadastroConsumidor;
 import org.springframework.data.jpa.repository.JpaRepository;

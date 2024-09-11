@@ -1,7 +1,6 @@
-package golden.data.api.pagamento;
+package golden.data.api.model;
 
-import golden.data.api.model.CadastroEmpresa;
-import golden.data.api.model.HistoricoCompra;
+import golden.data.api.pagamento.PagamentoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

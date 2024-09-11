@@ -1,8 +1,8 @@
-package golden.data.api.cadastroConsumidor;
+package golden.data.api.dto.consumidoresDTO;
 
 import golden.data.api.model.CadastroConsumidor;
 
-public record DadosListagemConsumidores(
+public record ListagemConsumidoresDTO(
         Long id_cons,
         String eml_cons,
         String pwd_cons,
@@ -12,7 +12,7 @@ public record DadosListagemConsumidores(
         String dt_nasc_cons,
         String est_cons
 ) {
-    public DadosListagemConsumidores(CadastroConsumidor consumidor) {
+    public ListagemConsumidoresDTO(CadastroConsumidor consumidor) {
         this(consumidor.getId_cons(),
                 consumidor.getEml_cons(),
                 consumidor.getPwd_cons(),

@@ -1,9 +1,9 @@
 package golden.data.api.controller;
 
-import golden.data.api.historicoCompra.DadosListagemHistoricoCompra;
+import golden.data.api.dto.historicoCompraDTO.ListagemHistoricoCompraDTO;
 import golden.data.api.model.HistoricoCompra;
-import golden.data.api.historicoCompra.HistoricoCompraDTO;
-import golden.data.api.historicoCompra.HistoricoCompraRepository;
+import golden.data.api.dto.historicoCompraDTO.HistoricoCompraDTO;
+import golden.data.api.repository.HistoricoCompraRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ public class HistoricoCompraController {
         repository.save(new HistoricoCompra(dados));
     }
     @GetMapping
-    public List<DadosListagemHistoricoCompra> listar() {
-        return repository.findAll().stream().map(DadosListagemHistoricoCompra::new).toList();
+    public List<ListagemHistoricoCompraDTO> listar() {
+        return repository.findAll().stream().map(ListagemHistoricoCompraDTO::new).toList();
     }
 
     @PutMapping

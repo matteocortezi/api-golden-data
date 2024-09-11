@@ -1,4 +1,4 @@
-package golden.data.api.infoConsumidorEmpresa;
+package golden.data.api.repository;
 
 import golden.data.api.model.InfoConsumidorEmpresa;
 import org.springframework.data.jpa.repository.JpaRepository;

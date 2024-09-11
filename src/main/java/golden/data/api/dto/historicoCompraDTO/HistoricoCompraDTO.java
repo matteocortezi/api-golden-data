@@ -1,4 +1,4 @@
-package golden.data.api.historicoCompra;
+package golden.data.api.dto.historicoCompraDTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

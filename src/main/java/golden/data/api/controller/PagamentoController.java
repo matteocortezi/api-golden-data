@@ -1,12 +1,10 @@
 package golden.data.api.controller;
 
-import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
 import golden.data.api.pagamento.DadosListagemPagamentos;
-import golden.data.api.pagamento.Pagamento;
+import golden.data.api.model.Pagamento;
 import golden.data.api.pagamento.PagamentoDTO;
-import golden.data.api.pagamento.PagamentoRepository;
+import golden.data.api.repository.PagamentoRepository;
 import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
