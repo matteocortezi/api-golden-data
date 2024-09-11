@@ -15,14 +15,29 @@ public class CadastroConsumidor {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long id_cons;
-    private String eml_cons;
-    private String pwd_cons;
-    private String cpf_cons;
-    private String nm_cons;
-    private String gen_cons;
-    private String dt_nasc_cons;
-    private String est_cons;
+    @Column(name = "id_cons")
+    private Long idCons;
+
+    @Column(name = "eml_cons")
+    private String emlCons;
+
+    @Column(name = "pwd_cons")
+    private String pwdCons;
+
+    @Column(name = "cpf_cons")
+    private String cpfCons;
+
+    @Column(name = "nm_cons")
+    private String nmCons;
+
+    @Column(name = "gen_cons")
+    private String genCons;
+
+    @Column(name = "dt_nasc_cons")
+    private String dtNascCons;
+
+    @Column(name = "est_cons")
+    private String estCons;
 
     @OneToMany(mappedBy = "consumidor")
     private List<InfoConsumidorEmpresa> infoDoConsParaEmpresa;
@@ -32,40 +47,40 @@ public class CadastroConsumidor {
 
 
     public CadastroConsumidor(CadastroConsumidorDTO dados) {
-        this.id_cons = dados.id_cons();
-        this.eml_cons = dados.eml_cons();
-        this.pwd_cons = dados.pwd_cons();
-        this.cpf_cons = dados.cpf_cons();
-        this.nm_cons = dados.nm_cons();
-        this.gen_cons = dados.gen_cons();
-        this.dt_nasc_cons = dados.dt_nasc_cons();
-        this.est_cons = dados.est_cons();
+        this.idCons = dados.idCons();
+        this.emlCons = dados.emlCons();
+        this.pwdCons = dados.pwdCons();
+        this.cpfCons = dados.cpfCons();
+        this.nmCons = dados.nmCons();
+        this.genCons = dados.genCons();
+        this.dtNascCons = dados.dtNascCons();
+        this.estCons = dados.estCons();
     }
 
     public void atualizarInformacoes(CadastroConsumidorDTO dados) {
-        if (dados.id_cons() != null) {
-            this.id_cons = dados.id_cons();
+        if (dados.idCons() != null) {
+            this.idCons = dados.idCons();
         }
-        if (dados.eml_cons() != null) {
-            this.eml_cons = dados.eml_cons();
+        if (dados.emlCons() != null) {
+            this.emlCons = dados.emlCons();
         }
-        if (dados.pwd_cons() != null) {
-            this.pwd_cons = dados.pwd_cons();
+        if (dados.pwdCons() != null) {
+            this.pwdCons = dados.pwdCons();
         }
-        if (dados.cpf_cons() != null) {
-            this.cpf_cons = dados.cpf_cons();
+        if (dados.cpfCons() != null) {
+            this.cpfCons = dados.cpfCons();
         }
-        if (dados.nm_cons() != null) {
-            this.nm_cons = dados.nm_cons();
+        if (dados.nmCons() != null) {
+            this.nmCons = dados.nmCons();
         }
-        if (dados.gen_cons() != null) {
-            this.gen_cons = dados.gen_cons();
+        if (dados.genCons() != null) {
+            this.genCons = dados.genCons();
         }
-        if (dados.dt_nasc_cons() != null) {
-            this.dt_nasc_cons = dados.dt_nasc_cons();
+        if (dados.dtNascCons() != null) {
+            this.dtNascCons = dados.dtNascCons();
         }
-        if (dados.est_cons() != null) {
-            this.est_cons = dados.est_cons();
+        if (dados.estCons() != null) {
+            this.estCons = dados.estCons();
         }
     }
 

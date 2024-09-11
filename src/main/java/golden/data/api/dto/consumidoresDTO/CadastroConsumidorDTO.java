@@ -1,24 +1,25 @@
 package golden.data.api.dto.consumidoresDTO;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record CadastroConsumidorDTO(
         @NotNull
-        Long id_cons,
+        Long idCons,
         @NotBlank
         @Email
-        String eml_cons,
+        String emlCons,
         @NotBlank
-        String pwd_cons,
+        String pwdCons,
         @NotBlank
-        String cpf_cons,
+        String cpfCons,
         @NotBlank
-        String nm_cons,
+        String nmCons,
         @NotBlank
-        String gen_cons,
+        String genCons,
         @NotBlank
-        String dt_nasc_cons,
+        String dtNascCons,
         @NotBlank
-        String est_cons) {
+        String estCons) {
 }
