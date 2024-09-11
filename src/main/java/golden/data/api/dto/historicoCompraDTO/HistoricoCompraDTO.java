@@ -5,9 +5,10 @@ import jakarta.validation.constraints.NotNull;
 
 public record HistoricoCompraDTO(
         @NotNull
-        Long id_cmp,
+        Long idCmp,
         @NotBlank
-        String dt_cmp,
+        String dtCmp,
         @NotBlank
-        String vlr_cmp) {
+        String vlrCmp) {
 }
+
