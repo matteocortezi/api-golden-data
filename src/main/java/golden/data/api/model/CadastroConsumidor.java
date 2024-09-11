@@ -1,6 +1,5 @@
-package golden.data.api.cadastroConsumidor;
-import golden.data.api.infoConsumidor.InfoConsumidor;
-import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
+package golden.data.api.model;
+import golden.data.api.cadastroConsumidor.CadastroConsumidorDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,8 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CadastroConsumidor {
-    //Devido a um problema com o BANCO não está sendo possível usar o ID autoincrementável.
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id_cons;
     private String eml_cons;

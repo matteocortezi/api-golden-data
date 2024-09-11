@@ -1,8 +1,7 @@
 package golden.data.api.controller;
 
-import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
 import golden.data.api.historicoCompra.DadosListagemHistoricoCompra;
-import golden.data.api.historicoCompra.HistoricoCompra;
+import golden.data.api.model.HistoricoCompra;
 import golden.data.api.historicoCompra.HistoricoCompraDTO;
 import golden.data.api.historicoCompra.HistoricoCompraRepository;
 import jakarta.transaction.Transactional;

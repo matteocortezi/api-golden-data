@@ -1,7 +1,6 @@
 package golden.data.api.controller;
 
-import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
-import golden.data.api.cadastroEmpresa.CadastroEmpresa;
+import golden.data.api.model.CadastroEmpresa;
 import golden.data.api.cadastroEmpresa.CadastroEmpresaDto;
 import golden.data.api.cadastroEmpresa.CadastroEmpresaRepository;
 import golden.data.api.cadastroEmpresa.DadosListagemEmpresas;

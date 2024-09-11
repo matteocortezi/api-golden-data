@@ -1,5 +1,7 @@
 package golden.data.api.infoConsumidor;
 
+import golden.data.api.model.InfoConsumidor;
+
 public record DadosListagemInfoConsumidor(String pref_cpm_clie,
                                           String pref_anc,
                                           String marcas_evitadas,

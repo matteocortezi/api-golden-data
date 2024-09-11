@@ -1,5 +1,5 @@
-package golden.data.api.cadastroEmpresa;
-import golden.data.api.infoConsumidorEmpresa.InfoConsumidorEmpresa;
+package golden.data.api.model;
+import golden.data.api.cadastroEmpresa.CadastroEmpresaDto;
 import golden.data.api.pagamento.Pagamento;
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,4 +1,7 @@
 package golden.data.api.cadastroConsumidor;
+
+import golden.data.api.model.CadastroConsumidor;
+
 public record DadosListagemConsumidores(
         Long id_cons,
         String eml_cons,

@@ -1,8 +1,6 @@
-package golden.data.api.infoConsumidorEmpresa;
+package golden.data.api.model;
 
 
-import golden.data.api.cadastroConsumidor.CadastroConsumidor;
-import golden.data.api.cadastroEmpresa.CadastroEmpresa;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

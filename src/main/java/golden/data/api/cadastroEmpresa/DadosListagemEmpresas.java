@@ -1,6 +1,7 @@
 package golden.data.api.cadastroEmpresa;
 
 
+import golden.data.api.model.CadastroEmpresa;
 
 public record DadosListagemEmpresas(
         Long id_emp,

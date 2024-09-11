@@ -1,8 +1,7 @@
 package golden.data.api.controller;
 
-import golden.data.api.cadastroConsumidor.DadosListagemConsumidores;
 import golden.data.api.infoConsumidor.DadosListagemInfoConsumidor;
-import golden.data.api.infoConsumidor.InfoConsumidor;
+import golden.data.api.model.InfoConsumidor;
 import golden.data.api.infoConsumidor.InfoConsumidorDTO;
 import golden.data.api.infoConsumidor.InfoConsumidorRepository;
 import jakarta.transaction.Transactional;
