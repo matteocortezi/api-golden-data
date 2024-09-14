@@ -37,7 +37,7 @@ public class InfoConsumidorController {
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid InfoConsumidorDTO dados){
-        var infoConsumidor = repository.getReferenceById(dados.id_info());
+        var infoConsumidor = repository.getReferenceById(dados.idInfo());
         infoConsumidor.atualizarInformacoes(dados);
     }
     @DeleteMapping("/{id}")

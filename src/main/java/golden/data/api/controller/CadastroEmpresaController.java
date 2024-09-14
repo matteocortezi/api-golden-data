@@ -37,7 +37,8 @@ public class CadastroEmpresaController {
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid CadastroEmpresaDto dados){
-        var empresa = repository.getReferenceById(dados.id_emp());
+        var empresa = repository.getReferenceById(dados.idEmp()
+        );
         empresa.atualizarInformacoes(dados);
     }
     @DeleteMapping("/{id}")

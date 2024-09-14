@@ -35,7 +35,7 @@ public class HistoricoCompraController {
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid HistoricoCompraDTO dados){
-        var historicoCompra = repository.getReferenceById(dados.id_cmp());
+        var historicoCompra = repository.getReferenceById(dados.idCmp());
         historicoCompra.atualizarInformacoes(dados);
     }
     @DeleteMapping("/{id}")
