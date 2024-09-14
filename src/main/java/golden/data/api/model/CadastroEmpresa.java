@@ -1,5 +1,5 @@
 package golden.data.api.model;
-import golden.data.api.dto.empresaDTO.CadastroEmpresaDto;
+import golden.data.api.dto.empresaDTO.CadastroEmpresaDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -34,7 +34,7 @@ public class CadastroEmpresa {
     private List <InfoConsumidorEmpresa> infoConsumidorParaEmpresa;
 
 
-    public CadastroEmpresa(CadastroEmpresaDto dados) {
+    public CadastroEmpresa(CadastroEmpresaDTO dados) {
         this.idEmp = dados.idEmp();
         this.cnpjEmp = dados.cnpjEmp();
         this.emlEmp = dados.emlEmp();
@@ -43,7 +43,7 @@ public class CadastroEmpresa {
     }
 
 
-    public void atualizarInformacoes(CadastroEmpresaDto dados) {
+    public void atualizarInformacoes(CadastroEmpresaDTO dados) {
         if (dados.idEmp() != null) {
             this.idEmp = dados.idEmp();
         }

@@ -1,7 +1,7 @@
 package golden.data.api.controller;
 
 import golden.data.api.model.CadastroEmpresa;
-import golden.data.api.dto.empresaDTO.CadastroEmpresaDto;
+import golden.data.api.dto.empresaDTO.CadastroEmpresaDTO;
 import golden.data.api.repository.CadastroEmpresaRepository;
 import golden.data.api.dto.empresaDTO.ListagemEmpresasDTO;
 import jakarta.transaction.Transactional;
@@ -11,9 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.util.List;
-
 @RestController
 @RequestMapping ("cadastro-empresa")
 public class CadastroEmpresaController {
@@ -22,7 +19,7 @@ public class CadastroEmpresaController {
     private CadastroEmpresaRepository repository;
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody CadastroEmpresaDto dados){
+    public void cadastrar(@RequestBody CadastroEmpresaDTO dados){
         repository.save(new CadastroEmpresa(dados));
     }
 
@@ -36,7 +33,7 @@ public class CadastroEmpresaController {
 
     @PutMapping
     @Transactional
-    public void atualizar(@RequestBody @Valid CadastroEmpresaDto dados){
+    public void atualizar(@RequestBody @Valid CadastroEmpresaDTO dados){
         var empresa = repository.getReferenceById(dados.idEmp()
         );
         empresa.atualizarInformacoes(dados);
