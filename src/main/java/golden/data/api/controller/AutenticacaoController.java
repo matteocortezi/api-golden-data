@@ -1,6 +1,8 @@
 package golden.data.api.controller;
 
 import golden.data.api.dto.autenticacaoDTO.AutenticacaoDTO;
+import golden.data.api.model.Usuario;
+import golden.data.api.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +19,15 @@ public class AutenticacaoController
 {
     @Autowired
     private AuthenticationManager manager;
+
+    @Autowired
+    private TokenService tokenService;
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid AutenticacaoDTO dados){
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
                 var authentication = manager.authenticate(token);
 
-                return ResponseEntity.ok().build();
+                return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
 
     }
 }
