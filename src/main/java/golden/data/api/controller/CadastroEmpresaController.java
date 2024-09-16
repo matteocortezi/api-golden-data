@@ -4,6 +4,9 @@ import golden.data.api.model.CadastroEmpresa;
 import golden.data.api.dto.empresaDTO.CadastroEmpresaDTO;
 import golden.data.api.repository.CadastroEmpresaRepository;
 import golden.data.api.dto.empresaDTO.ListagemEmpresasDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +28,12 @@ public class CadastroEmpresaController {
 
 
 
+    @Operation(description = "Busca as empresas que foram cadastradas")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna as empresas cadastradas em páginas"),
+            @ApiResponse(responseCode = "400", description = "Requisição inválida ou página de dados inexistente")
 
+    })
     @GetMapping
     public Page<ListagemEmpresasDTO> listar(Pageable paginacao) {
         return repository.findAll(paginacao).map(ListagemEmpresasDTO::new);
