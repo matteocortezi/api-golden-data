@@ -2,6 +2,7 @@ package golden.data.api.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity(name = "usuario")
+@Table(name = "usuario")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,7 +27,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USUARIO"));
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override

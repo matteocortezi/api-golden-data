@@ -39,12 +39,6 @@ public class CadastroConsumidor {
     @Column(name = "est_cons")
     private String estCons;
 
-    @OneToMany(mappedBy = "consumidor")
-    private List<InfoConsumidorEmpresa> infoDoConsParaEmpresa;
-
-    @OneToMany(mappedBy = "consumidor")
-    private List<InfoConsumidor> infoDoConsumidor;
-
 
     public CadastroConsumidor(CadastroConsumidorDTO dados) {
         this.idCons = dados.idCons();

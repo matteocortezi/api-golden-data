@@ -24,8 +24,7 @@ public class HistoricoCompra {
     @Column(name = "vlr_cmp")
     private String vlrCmp;
 
-    @OneToOne
-    private Pagamento pagamento;
+
 
 
     public HistoricoCompra(HistoricoCompraDTO dados) {

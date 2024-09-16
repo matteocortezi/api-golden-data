@@ -1,5 +1,4 @@
 package golden.data.api.service;
-
 import golden.data.api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,9 +12,9 @@ public class AutenticacaoService implements UserDetailsService {
     @Autowired
     private UsuarioRepository repository;
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return repository.findByLogin(username);
     }
 }
+

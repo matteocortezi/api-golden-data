@@ -27,11 +27,7 @@ public class CadastroEmpresa {
     @Column(name = "senha_emp")
     private String senhaEmp;
 
-    @OneToMany(mappedBy = "empresa")
-    private List <Pagamento> pagamentos;
 
-    @OneToMany(mappedBy = "empresa")
-    private List <InfoConsumidorEmpresa> infoConsumidorParaEmpresa;
 
 
     public CadastroEmpresa(CadastroEmpresaDTO dados) {

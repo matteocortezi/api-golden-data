@@ -33,9 +33,7 @@ public class InfoConsumidor {
     @Column(name = "cmp_on")
     private String cmpOn;
 
-    @ManyToOne
-    @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons", nullable = false)
-    private CadastroConsumidor consumidor;
+
 
     public InfoConsumidor(InfoConsumidorDTO dados) {
         this.prefCmpClie = dados.prefCmpClie();

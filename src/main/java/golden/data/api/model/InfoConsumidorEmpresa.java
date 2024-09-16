@@ -17,13 +17,5 @@ public class InfoConsumidorEmpresa {
     @Column(name = "id_info_cons_emp")
     private Long idInfoConsEmp;
 
-    @ManyToOne
-    @JoinColumn(name = "CADASTRO_EMPRESA_id_emp")
-    private CadastroEmpresa empresa;
-
-    @ManyToOne
-    @JoinColumn(name = "CADASTRO_CONSUMIDOR_id_cons")
-    private CadastroConsumidor consumidor;
-
 
 }

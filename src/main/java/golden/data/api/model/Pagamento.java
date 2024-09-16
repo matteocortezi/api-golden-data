@@ -26,12 +26,6 @@ public class Pagamento {
     @Column(name = "sts_pag")
     private String stsPag;
 
-    @ManyToOne
-    @JoinColumn(name = "CADASTRO_EMPRESA_id_emp", nullable = false)
-    private CadastroEmpresa empresa;
-
-    @OneToOne(mappedBy = "pagamento")
-    private HistoricoCompra historicoCompra;
 
     public Pagamento(PagamentoDTO dados) {
         this.vlrPag = dados.vlrPag();
